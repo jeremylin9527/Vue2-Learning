@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>当前计数：{{counter}}</h2>
+      <button @click="addValue">+</button>
+      <button @click="subValue">-</button>
+      <button @click="escValue">esc</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          counter: 0,
+        },
+        methods: {
+          addValue: function () {
+            this.counter++;
+          },
+          subValue: function () {
+            this.counter--;
+          },
+          escValue: function () {
+            this.counter = 0;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
